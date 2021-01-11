@@ -12,3 +12,16 @@ def binarySearch(arr,x):
     
 arr = [10,10]
 print(binarySearch(arr,10))
+
+# Adding the recursive method
+
+def binary_search1(arr,x,low,high):
+    if low > high:
+        return -1
+    mid = (low+high)//2
+    if arr[mid] == x:
+        return mid
+    if arr[mid] > x:
+        return binary_search(arr,x,mid+1,high)
+    else:
+        return binary_search(arr,x,low,mid-1)
