@@ -25,3 +25,18 @@ def detectlooplist(self):
                 l.add(llist)
                 llist = llist.next
             return False
+
+        # method 3 will using two pointers
+        
+        if self.head == None:
+            print("No element")
+        else:
+            slow_pointer = self.head
+            fast_pointer = self.head
+            while fast_pointer and fast_pointer.next:
+                slow_pointer = slow_poniter.next
+                fast_pointer = fast_pointer.next.next
+                
+                if slow_pointer == fast_pointer:
+                    return True
+        return False
